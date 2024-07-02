@@ -1,16 +1,24 @@
+import { IMAGEパス } from "lib/config";
+
 const Sidebar = () => {
   return (
     <div className="bg-white p-4">
-      <form className="mb-4">
+      <form className="mb-4 relative">
         <input
           type="text"
           placeholder="Search"
-          className="border-b-2 border-gray-400 outline-none w-full py-1 px-2"
+          className="border-b-2 border-gray-300 outline-none w-full py-1 px-2"
         />
+        <button
+          type="submit"
+          className="absolute right-0 top-0 mt-2 mr-2 text-gray-400"
+        >
+          🔍
+        </button>
       </form>
 
       <div className="mb-4">
-        <h2 className="font-bold text-lg mb-2">CATEGORIES</h2>
+        <h2 className="font-bold text-lg mb-2 underline">CATEGORIES</h2>
         <ul className="space-y-1">
           <li>
             <a href="/" className="text-black hover:underline">
@@ -41,7 +49,7 @@ const Sidebar = () => {
       </div>
 
       <div className="mb-4">
-        <h2 className="font-bold text-lg mb-2">TAGS</h2>
+        <h2 className="font-bold text-lg mb-2 underline">TAGS</h2>
         <ul className="space-y-1">
           <li>
             <a href="/" className="text-black hover:underline">
@@ -67,11 +75,11 @@ const Sidebar = () => {
       </div>
 
       <div className="mb-4">
-        <h2 className="font-bold text-lg mb-2">LATEST POSTS</h2>
+        <h2 className="font-bold text-lg mb-2 underline">LATEST POSTS</h2>
         <ul className="space-y-4">
           <li className="flex items-center">
             <img
-              src="https://via.placeholder.com/60"
+              src={`${IMAGEパス}/最新記事１.png`}
               alt="Post 1"
               className="w-12 h-12 mr-3"
             />
@@ -81,7 +89,7 @@ const Sidebar = () => {
           </li>
           <li className="flex items-center">
             <img
-              src="https://via.placeholder.com/60"
+              src={`${IMAGEパス}/最新記事２.png`}
               alt="Post 2"
               className="w-12 h-12 mr-3"
             />
@@ -91,7 +99,7 @@ const Sidebar = () => {
           </li>
           <li className="flex items-center">
             <img
-              src="https://via.placeholder.com/60"
+              src={`${IMAGEパス}/最新記事３.png`}
               alt="Post 3"
               className="w-12 h-12 mr-3"
             />
@@ -103,7 +111,7 @@ const Sidebar = () => {
       </div>
 
       <div>
-        <h2 className="font-bold text-lg mb-2">SOCIAL LINKS</h2>
+        <h2 className="font-bold text-lg mb-2 underline">SOCIAL LINKS</h2>
         <ul className="space-y-1">
           <li>
             <a href="/" className="text-black hover:underline">

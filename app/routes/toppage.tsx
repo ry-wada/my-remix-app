@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import { articles } from "../utils/mockData";
 import ArticleCard from "../components/ArticleCard";
 import Sidebar from "../components/Sidebar";
 import "../styles/tailwind.css";
+import { Article, articles } from "~/utils/mockData";
 
 const Articles = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [currentArticles, setCurrentArticles] = useState<articles[]>([]);
+  const [currentArticles, setCurrentArticles] = useState<Article[]>([]);
   const articlesPerPage = 8; // 1ページあたりの記事数
 
   useEffect(() => {
@@ -44,7 +44,7 @@ const Articles = () => {
                 <button
                   onClick={() => paginate(currentPage - 1)}
                   disabled={currentPage === 1}
-                  className="px-3 py-1 bg-gray-200 hover:bg-gray-300 rounded"
+                  className="px-3 py-1 bg-inherit hover:bg-gray-300 rounded"
                 >
                   ＜
                 </button>
@@ -56,8 +56,8 @@ const Articles = () => {
                       onClick={() => paginate(index + 1)}
                       className={`px-3 py-1 ${
                         currentPage === index + 1
-                          ? "bg-blue-500 text-white"
-                          : "bg-gray-200 hover:bg-gray-300"
+                          ? "bg-gray-300"
+                          : "bg-inherit hover:bg-gray-300"
                       } rounded`}
                     >
                       {index + 1}
@@ -71,7 +71,7 @@ const Articles = () => {
                   disabled={
                     currentPage === Math.ceil(articles.length / articlesPerPage)
                   }
-                  className="px-3 py-1 bg-gray-200 hover:bg-gray-300 rounded"
+                  className="px-3 py-1 bg-inherit hover:bg-gray-300 rounded"
                 >
                   ＞
                 </button>
